@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: face-recognition
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: face-recognition
+  template:
+    metadata:
+      labels:
+        app: face-recognition
+    spec:
+      containers:
+      - name: face-recognition
+        image: your-flask-image
+        ports:
+        - containerPort: 5000
