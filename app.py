@@ -33,7 +33,6 @@ def add_user():
     
     return render_template('add_user.html')
 
-
 @app.route('/train')
 def train():
     # Call trainer.py
