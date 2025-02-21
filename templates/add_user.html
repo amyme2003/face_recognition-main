@@ -19,5 +19,31 @@
         
         <button type="submit">Add User</button>
     </form>
+    
+    <br><br>
+    
+    <h2>Capture Image</h2>
+    <video id="video" width="320" height="240" autoplay></video>
+    <button id="capture-btn">Capture Image</button>
+    
+    <script>
+        // Access the camera
+        const video = document.getElementById("video");
+        const captureBtn = document.getElementById("capture-btn");
+
+        // Start the camera stream
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing the camera: ", err);
+            });
+
+        // Capture image logic can go here (e.g., sending image to the backend)
+        captureBtn.onclick = function() {
+            // Implement image capture logic here if necessary
+        }
+    </script>
 </body>
 </html>
