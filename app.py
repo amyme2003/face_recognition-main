@@ -7,7 +7,7 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = 'Hi'
 
-# Ensure required directories exist
+
 os.makedirs("dataset", exist_ok=True)
 os.makedirs("recognizer", exist_ok=True)
 
